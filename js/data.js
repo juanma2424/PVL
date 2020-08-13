@@ -3,18 +3,28 @@
 //personaje
 
 
-
 var pathMap;
 var pathPie;
 var pathSemiPie;
 var pathBar;
-var i =0;
 
 
 var FpathMap = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/map.json';
 var FpathPie = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/JSONPIE/2015P.json';
 var FpathSemiPie = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/JSONSEMIPIE/2015SP.json';
 var FpathBar = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/BARRAS.JSON';
+
+
+
+ var slider1 = document.getElementById("select");
+ var output1 = document.getElementById("output");
+ output1.innerHTML = slider1.value;
+ slider1.oninput = function() {
+    output1.innerHTML = this.value;
+  }
+
+
+
 
 
 
@@ -114,7 +124,7 @@ Highcharts.getJSON(FpathMap, function (data) {
 
 
 Highcharts.getJSON(FpathBar, function (data) {
-    //window.alert ( data.filter(function(n){i++; return n.champion ==='Aatrox';}).map(function(o){return([o.player + o.champion  , o.result])}).slice(0,math.min(30,i)), ),
+   // window.alert ( data.filter(function(n){return n.champion ==='Aatrox';}).map(function(o){return([o.player + o.champion  , o.result])}).slice(0,math.min(30,i)), ),
 
     Highcharts.chart('barcontainer', {
         chart: {
@@ -172,10 +182,11 @@ Highcharts.getJSON(FpathBar, function (data) {
 
 
 
+
+
+
+
 //////INICIO///////
-
-
-
 slider.oninput = function () {
 
     output.innerHTML = this.value;
