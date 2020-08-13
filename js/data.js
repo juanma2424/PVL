@@ -13,16 +13,18 @@ var FpathMap = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUE
 var FpathPie = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/JSONPIE/2015P.json';
 var FpathSemiPie = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/JSONSEMIPIE/2015SP.json';
 var FpathBar = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/BARRAS.JSON';
-
+var TempSelec;
 
 
  var slider1 = document.getElementById("select");
  var output1 = document.getElementById("output");
  output1.innerHTML = slider1.value;
+ TempSelec = slider1.value;
  slider1.oninput = function() {
     output1.innerHTML = this.value;
+    TempSelec = this.value;
+    generateCharts()
   }
-
 
 
 
@@ -34,7 +36,7 @@ output.innerHTML = slider.value;
 
 
 //////INICIO_DEFAULT///////
-
+generateCharts()
 Highcharts.getJSON(FpathMap, function (data) {
 
     //Prevent logarithmic errors in color calulcation
@@ -121,67 +123,6 @@ Highcharts.getJSON(FpathMap, function (data) {
     });
    
 });
-
-
-Highcharts.getJSON(FpathBar, function (data) {
-   // window.alert ( data.filter(function(n){return n.champion ==='Aatrox';}).map(function(o){return([o.player + o.champion  , o.result])}).slice(0,math.min(30,i)), ),
-
-    Highcharts.chart('barcontainer', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Happiest countries 2015'
-        },
-        xAxis: {
-            type: 'category',
-            labels: {
-                rotation: -45,
-                style: {
-                    fontSize: '13px',
-                    fontFamily: 'Verdana, sans-serif'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Happieness'
-            }
-        },
-        legend: {
-            enabled: false
-        },
-        tooltip: {
-            pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
-        }, 
-        series: [{
-            name: 'Population',
-            data: data.filter(function(n){  return n.player ==='Buggax';}).map(function(o){return([o.player + o.champion  , o.result])}).slice(0,20000), 
-            //data.filter(function(item){return item.value <= slider.value}),
-            dataLabels: {
-                enabled: true,
-                rotation: -90,
-                color: '#FFFFFF',
-                align: 'right',
-                format: '{point.y:.1f}', // one decimal
-                y: 10, // 10 pixels down from the top
-                style: {
-                    fontSize: '13px',
-                    fontFamily: 'Verdana, sans-serif'
-                }
-            }
-        }]
-    });
-})
-
-
-
-
-
-
-
-
 
 
 
@@ -336,8 +277,6 @@ Highcharts.getJSON(FpathBar, function (data) {
 }
 
 
-
-
 function face() {
     var b = parseInt(pDataScore);
     var rango = b;
@@ -354,3 +293,66 @@ function face() {
 
 
 }
+
+function generateCharts(){
+    Highcharts.getJSON(FpathBar, function (data) {
+        //window.alert(TempSelec)
+            Highcharts.chart('barcontainer', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Happiest countries 2015'
+                },
+                xAxis: {
+                    type: 'category',
+                    labels: {
+                        rotation: -45,
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Happieness'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
+                }, 
+                series: [{
+                    name: 'Population',
+                    data: data.filter(function(n){  return (n.champion == TempSelec || TempSelec == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0,15), 
+                    //data.filter(function(item){return item.value <= slider.value}),
+                    dataLabels: {
+                        enabled: true,
+                        rotation: -90,
+                        color: '#FFFFFF',
+                        align: 'right',
+                        format: '{point.y:.1f}', // one decimal
+                        y: 10, // 10 pixels down from the top
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                }]
+            });
+        })
+}
+function predicateBy(prop){
+    return function(a,b){
+       if (a[prop] > b[prop]){
+           return -1;
+       } else if(a[prop] < b[prop]){
+           return 1;
+       }
+       return 0;
+    }
+ }
