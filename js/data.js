@@ -379,7 +379,7 @@ function generateCharts(){
         })
 
         //GRAFICO DE CIRCULAR
-        Highcharts.getJSON(FpathData, function (data) {
+        Highcharts.getJSON(FpathFile, function (data) {
 
             Highcharts.chart('piecontainer', {
                 chart: {
@@ -389,10 +389,10 @@ function generateCharts(){
                     type: 'pie'
                 },
                 title: {
-                    text: 'Health in countries 2015'
+                    text: 'Popularidad de personajes'
                 },
                 tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    pointFormat: '{series.name}: <b>{point.y:.1f} juegos</b>'
                 },
                 accessibility: {
                     point: {
@@ -405,14 +405,14 @@ function generateCharts(){
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                            format: '<b>{point.name}</b>: {point.percentage:.1f}%'
                         }
                     }
                 },
                 series: [{
-                    name: 'Health',
+                    name: 'Cantidad de juegos',
                     colorByPoint: true,
-                    data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.kda])}).slice(0,15),
+                    data: data.filter(function(n){  return (n.league === TempSelecT)}).filter(function(n){  return (n.team === TempSelecE)}).sort( predicateBy("result") ).map(function(o){return([o.champion  , o.result])}).slice(0,5),
                 }]
             });
         })
@@ -452,7 +452,7 @@ function generateCharts(){
                 }, 
                 series: [{
                     name: 'Population',
-                    data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0,15), 
+                    data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("damagetochampions") ).map(function(o){return([o.player + " - "+o.champion  , o.damagetochampions])}).slice(0,15), 
                     //data.filter(function(item){return item.value <= slider.value}),
                     dataLabels: {
                         enabled: true,
