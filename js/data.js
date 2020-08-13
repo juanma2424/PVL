@@ -114,7 +114,7 @@ Highcharts.getJSON(FpathMap, function (data) {
 
 
 Highcharts.getJSON(FpathBar, function (data) {
-    window.alert ( data.filter(function(n){i++; return n.champion ==='Aatrox';}).map(function(o){return([o.player + o.champion  , o.result])}).slice(0,math.min(30,i)), ),
+    //window.alert ( data.filter(function(n){i++; return n.champion ==='Aatrox';}).map(function(o){return([o.player + o.champion  , o.result])}).slice(0,math.min(30,i)), ),
 
     Highcharts.chart('barcontainer', {
         chart: {
@@ -147,7 +147,7 @@ Highcharts.getJSON(FpathBar, function (data) {
         }, 
         series: [{
             name: 'Population',
-            data: data.filter(function(n){ if(n.champion ==='Aatrox'){i++}; return n.champion ==='Aatrox';}).map(function(o){return([o.player + o.champion  , o.result])}).slice(0,math.min(30,i)), 
+            data: data.filter(function(n){  return n.player ==='Buggax';}).map(function(o){return([o.player + o.champion  , o.result])}).slice(0,20000), 
             //data.filter(function(item){return item.value <= slider.value}),
             dataLabels: {
                 enabled: true,
