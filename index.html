@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--llamada al CSS-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <!--FONDO-->
+    <div id="back"></div>
+    <!--FONDO-->
+    <div id="emoji"></div>
+
+    <!--FONDO2-->
+    <div id="back2"></div>
+
+    <!--MAPA-->
+    <div id="container"></div>
+
+    <!--BAR TIME-->
+    <div id="slidecontainer">
+        <h1 style="color:dimgrey">Time Line</h1>
+        <input type="range" min="2015" max="2019" value="1" class="slider" id="myRange">
+        <p style="color:dimgrey">Year: <span id="demo"></span></p>
+    </div>
+
+    <!--PIE-->
+    <div id="piecontainer"></div>
+
+    <!--SEMIPIE-->
+    <div id="semipiecontainer"></div>
+
+    <!--BARRAS-->
+    <div id="barcontainer"></div>
+
+    <!-----IMG----->
+    <div id="header"></div>
+    <img id="myImg" src="DATA/IMG/2015.png" style=" position: absolute;top: 650px;left: 10px;">
+    <img id="myImg1" src="DATA/IMG/sample.png" style=" position: absolute;top: 510px;left: 320px;">
+   
+</body>
+
+<!--llamada al Bibliotecas-->
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+
+<!--llamada al js-->
+<script src="js/data.js"></script>
+<!--<script src="js/select.js"></script>-->
+
+
+
+
+</html>

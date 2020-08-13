@@ -1,0 +1,896 @@
+[
+    {
+        "code3": "CHE",
+        "name": "Switzerland",
+        "value": 758.6999999999999,
+        "code": "CH"
+    },
+    {
+        "code3": "ISL",
+        "name": "Iceland",
+        "value": 756.1,
+        "code": "IS"
+    },
+    {
+        "code3": "AFG",
+        "name": "Afghanistan",
+        "value": 357.5,
+        "code": "AF"
+    },
+    {
+        "code3": "DNK",
+        "name": "Denmark",
+        "value": 752.7,
+        "code": "DK"
+    },
+    {
+        "code3": "AGO",
+        "name": "Angola",
+        "value": 403.3,
+        "code": "AO"
+    },
+    {
+        "code3": "NOR",
+        "name": "Norway",
+        "value": 752.2,
+        "code": "NO"
+    },
+    {
+        "code3": "ALB",
+        "name": "Albania",
+        "value": 495.9,
+        "code": "AL"
+    },
+    {
+        "code3": "CAN",
+        "name": "Canada",
+        "value": 742.6999999999999,
+        "code": "CA"
+    },
+    {
+        "code3": "FIN",
+        "name": "Finland",
+        "value": 740.6,
+        "code": "FI"
+    },
+    {
+        "code3": "ARE",
+        "name": "United Arab Emirates",
+        "value": 690.1,
+        "code": "AE"
+    },
+    {
+        "code3": "NLD",
+        "name": "Netherlands",
+        "value": 737.8,
+        "code": "NL"
+    },
+    {
+        "code3": "ARG",
+        "name": "Argentina",
+        "value": 657.4,
+        "code": "AR"
+    },
+    {
+        "code3": "ARM",
+        "name": "Armenia",
+        "value": 434.99999999999994,
+        "code": "AM"
+    },
+    {
+        "code3": "NZL",
+        "name": "New Zealand",
+        "value": 728.5999999999999,
+        "code": "NZ"
+    },
+    {
+        "code3": "AUS",
+        "name": "Australia",
+        "value": 728.4,
+        "code": "AU"
+    },
+    {
+        "code3": "ISR",
+        "name": "Israel",
+        "value": 727.8,
+        "code": "IL"
+    },
+    {
+        "code3": "CRI",
+        "name": "Costa Rica",
+        "value": 722.6,
+        "code": "CR"
+    },
+    {
+        "code3": "AUT",
+        "name": "Austria",
+        "value": 720,
+        "code": "AT"
+    },
+    {
+        "code3": "AZE",
+        "name": "Azerbaijan",
+        "value": 521.1999999999999,
+        "code": "AZ"
+    },
+    {
+        "code3": "MEX",
+        "name": "Mexico",
+        "value": 718.7,
+        "code": "MX"
+    },
+    {
+        "code3": "BDI",
+        "name": "Burundi",
+        "value": 290.5,
+        "code": "BI"
+    },
+    {
+        "code3": "BEL",
+        "name": "Belgium",
+        "value": 693.7,
+        "code": "BE"
+    },
+    {
+        "code3": "BRA",
+        "name": "Brazil",
+        "value": 698.3,
+        "code": "BR"
+    },
+    {
+        "code3": "BEN",
+        "name": "Benin",
+        "value": 334,
+        "code": "BJ"
+    },
+    {
+        "code3": "LUX",
+        "name": "Luxembourg",
+        "value": 694.6,
+        "code": "LU"
+    },
+    {
+        "code3": "BFA",
+        "name": "Burkina Faso",
+        "value": 358.70000000000005,
+        "code": "BF"
+    },
+    {
+        "code3": "IRL",
+        "name": "Ireland",
+        "value": 694,
+        "code": "IE"
+    },
+    {
+        "code3": "BGD",
+        "name": "Bangladesh",
+        "value": 469.4,
+        "code": "BD"
+    },
+    {
+        "code3": "BGR",
+        "name": "Bulgaria",
+        "value": 421.8,
+        "code": "BG"
+    },
+    {
+        "code3": "BHR",
+        "name": "Bahrain",
+        "value": 596,
+        "code": "BH"
+    },
+    {
+        "code3": "GBR",
+        "name": "United Kingdom",
+        "value": 686.7,
+        "code": "GB"
+    },
+    {
+        "code3": "OMN",
+        "name": "Oman",
+        "value": 685.3,
+        "code": "OM"
+    },
+    {
+        "code3": "BIH",
+        "name": "Bosnia and Herzegovina",
+        "value": 494.9,
+        "code": "BA"
+    },
+    {
+        "code3": "BLR",
+        "name": "Belarus",
+        "value": 581.3,
+        "code": "BY"
+    },
+    {
+        "code3": "PAN",
+        "name": "Panama",
+        "value": 678.5999999999999,
+        "code": "PA"
+    },
+    {
+        "code3": "DEU",
+        "name": "Germany",
+        "value": 675,
+        "code": "DE"
+    },
+    {
+        "code3": "BOL",
+        "name": "Bolivia",
+        "value": 589,
+        "code": "BO"
+    },
+    {
+        "code3": "CHL",
+        "name": "Chile",
+        "value": 667,
+        "code": "CL"
+    },
+    {
+        "code3": "FRA",
+        "name": "France",
+        "value": 657.5,
+        "code": "FR"
+    },
+    {
+        "code3": "BTN",
+        "name": "Bhutan",
+        "value": 525.3,
+        "code": "BT"
+    },
+    {
+        "code3": "CZE",
+        "name": "Czech Republic",
+        "value": 650.5,
+        "code": "CZ"
+    },
+    {
+        "code3": "BWA",
+        "name": "Botswana",
+        "value": 433.2,
+        "code": "BW"
+    },
+    {
+        "code3": "CAF",
+        "name": "Central African Republic",
+        "value": 367.8,
+        "code": "CF"
+    },
+    {
+        "code3": "COL",
+        "name": "Colombia",
+        "value": 647.7,
+        "code": "CO"
+    },
+    {
+        "code3": "ESP",
+        "name": "Spain",
+        "value": 632.9,
+        "code": "ES"
+    },
+    {
+        "code3": "CHN",
+        "name": "China",
+        "value": 514,
+        "code": "CN"
+    },
+    {
+        "code3": "MLT",
+        "name": "Malta",
+        "value": 630.1999999999999,
+        "code": "MT"
+    },
+    {
+        "code3": "CMR",
+        "name": "Cameroon",
+        "value": 425.2,
+        "code": "CM"
+    },
+    {
+        "code3": "KWT",
+        "name": "Kuwait",
+        "value": 629.5,
+        "code": "KW"
+    },
+    {
+        "code3": "COM",
+        "name": "Comoros",
+        "value": 395.6,
+        "code": "KM"
+    },
+    {
+        "code3": "GTM",
+        "name": "Guatemala",
+        "value": 612.3000000000001,
+        "code": "GT"
+    },
+    {
+        "code3": "JPN",
+        "name": "Japan",
+        "value": 598.7,
+        "code": "JP"
+    },
+    {
+        "code3": "ECU",
+        "name": "Ecuador",
+        "value": 597.5,
+        "code": "EC"
+    },
+    {
+        "code3": "CYP",
+        "name": "Cyprus",
+        "value": 568.9,
+        "code": "CY"
+    },
+    {
+        "code3": "ITA",
+        "name": "Italy",
+        "value": 594.8000000000001,
+        "code": "IT"
+    },
+    {
+        "code3": "DJI",
+        "name": "Djibouti",
+        "value": 436.9,
+        "code": "DJ"
+    },
+    {
+        "code3": "MDA",
+        "name": "Moldova",
+        "value": 588.9,
+        "code": "MD"
+    },
+    {
+        "code3": "PRY",
+        "name": "Paraguay",
+        "value": 587.8,
+        "code": "PY"
+    },
+    {
+        "code3": "KAZ",
+        "name": "Kazakhstan",
+        "value": 585.5,
+        "code": "KZ"
+    },
+    {
+        "code3": "DOM",
+        "name": "Dominican Republic",
+        "value": 488.5,
+        "code": "DO"
+    },
+    {
+        "code3": "DZA",
+        "name": "Algeria",
+        "value": 560.5,
+        "code": "DZ"
+    },
+    {
+        "code3": "LTU",
+        "name": "Lithuania",
+        "value": 583.3000000000001,
+        "code": "LT"
+    },
+    {
+        "code3": "NIC",
+        "name": "Nicaragua",
+        "value": 582.8000000000001,
+        "code": "NI"
+    },
+    {
+        "code3": "PER",
+        "name": "Peru",
+        "value": 582.4,
+        "code": "PE"
+    },
+    {
+        "code3": "EST",
+        "name": "Estonia",
+        "value": 542.9,
+        "code": "EE"
+    },
+    {
+        "code3": "POL",
+        "name": "Poland",
+        "value": 579.1,
+        "code": "PL"
+    },
+    {
+        "code3": "ETH",
+        "name": "Ethiopia",
+        "value": 451.19999999999993,
+        "code": "ET"
+    },
+    {
+        "code3": "MYS",
+        "name": "Malaysia",
+        "value": 577,
+        "code": "MY"
+    },
+    {
+        "code3": "HRV",
+        "name": "Croatia",
+        "value": 575.9000000000001,
+        "code": "HR"
+    },
+    {
+        "code3": "LBY",
+        "name": "Libya",
+        "value": 575.4,
+        "code": "LY"
+    },
+    {
+        "code3": "JAM",
+        "name": "Jamaica",
+        "value": 570.9,
+        "code": "JM"
+    },
+    {
+        "code3": "GAB",
+        "name": "Gabon",
+        "value": 389.59999999999997,
+        "code": "GA"
+    },
+    {
+        "code3": "GEO",
+        "name": "Georgia",
+        "value": 429.7,
+        "code": "GE"
+    },
+    {
+        "code3": "GHA",
+        "name": "Ghana",
+        "value": 463.3,
+        "code": "GH"
+    },
+    {
+        "code3": "MUS",
+        "name": "Mauritius",
+        "value": 547.7,
+        "code": "MU"
+    },
+    {
+        "code3": "GIN",
+        "name": "Guinea",
+        "value": 365.6,
+        "code": "GN"
+    },
+    {
+        "code3": "IDN",
+        "name": "Indonesia",
+        "value": 539.9,
+        "code": "ID"
+    },
+    {
+        "code3": "GRC",
+        "name": "Greece",
+        "value": 485.70000000000005,
+        "code": "GR"
+    },
+    {
+        "code3": "NGA",
+        "name": "Nigeria",
+        "value": 526.8,
+        "code": "NG"
+    },
+    {
+        "code3": "PAK",
+        "name": "Pakistan",
+        "value": 519.4,
+        "code": "PK"
+    },
+    {
+        "code3": "JOR",
+        "name": "Jordan",
+        "value": 519.2,
+        "code": "JO"
+    },
+    {
+        "code3": "HND",
+        "name": "Honduras",
+        "value": 478.8,
+        "code": "HN"
+    },
+    {
+        "code3": "MNE",
+        "name": "Montenegro",
+        "value": 519.2,
+        "code": "ME"
+    },
+    {
+        "code3": "HTI",
+        "name": "Haiti",
+        "value": 451.79999999999995,
+        "code": "HT"
+    },
+    {
+        "code3": "HUN",
+        "name": "Hungary",
+        "value": 480,
+        "code": "HU"
+    },
+    {
+        "code3": "PRT",
+        "name": "Portugal",
+        "value": 510.20000000000005,
+        "code": "PT"
+    },
+    {
+        "code3": "IND",
+        "name": "India",
+        "value": 456.50000000000006,
+        "code": "IN"
+    },
+    {
+        "code3": "LVA",
+        "name": "Latvia",
+        "value": 509.8,
+        "code": "LV"
+    },
+    {
+        "code3": "PHL",
+        "name": "Philippines",
+        "value": 507.30000000000007,
+        "code": "PH"
+    },
+    {
+        "code3": "IRQ",
+        "name": "Iraq",
+        "value": 467.69999999999993,
+        "code": "IQ"
+    },
+    {
+        "code3": "MAR",
+        "name": "Morocco",
+        "value": 501.3,
+        "code": "MA"
+    },
+    {
+        "code3": "MOZ",
+        "name": "Mozambique",
+        "value": 497.1,
+        "code": "MZ"
+    },
+    {
+        "code3": "LSO",
+        "name": "Lesotho",
+        "value": 489.79999999999995,
+        "code": "LS"
+    },
+    {
+        "code3": "KEN",
+        "name": "Kenya",
+        "value": 441.9,
+        "code": "KE"
+    },
+    {
+        "code3": "MNG",
+        "name": "Mongolia",
+        "value": 487.4,
+        "code": "MN"
+    },
+    {
+        "code3": "KHM",
+        "name": "Cambodia",
+        "value": 381.9,
+        "code": "KH"
+    },
+    {
+        "code3": "LBN",
+        "name": "Lebanon",
+        "value": 483.90000000000003,
+        "code": "LB"
+    },
+    {
+        "code3": "LBR",
+        "name": "Liberia",
+        "value": 457.09999999999997,
+        "code": "LR"
+    },
+    {
+        "code3": "LKA",
+        "name": "Sri Lanka",
+        "value": 427.09999999999997,
+        "code": "LK"
+    },
+    {
+        "code3": "NPL",
+        "name": "Nepal",
+        "value": 451.40000000000003,
+        "code": "NP"
+    },
+    {
+        "code3": "MDG",
+        "name": "Madagascar",
+        "value": 368.1,
+        "code": "MG"
+    },
+    {
+        "code3": "MRT",
+        "name": "Mauritania",
+        "value": 443.6,
+        "code": "MR"
+    },
+    {
+        "code3": "MLI",
+        "name": "Mali",
+        "value": 399.5,
+        "code": "ML"
+    },
+    {
+        "code3": "MMR",
+        "name": "Myanmar",
+        "value": 430.70000000000005,
+        "code": "MM"
+    },
+    {
+        "code3": "MWI",
+        "name": "Malawi",
+        "value": 429.2,
+        "code": "MW"
+    },
+    {
+        "code3": "NER",
+        "name": "Niger",
+        "value": 384.5,
+        "code": "NE"
+    },
+    {
+        "code3": "QAT",
+        "name": "Qatar",
+        "value": 661.1,
+        "code": "QA"
+    },
+    {
+        "code3": "ROU",
+        "name": "Romania",
+        "value": 512.4,
+        "code": "RO"
+    },
+    {
+        "code3": "RWA",
+        "name": "Rwanda",
+        "value": 346.5,
+        "code": "RW"
+    },
+    {
+        "code3": "SAU",
+        "name": "Saudi Arabia",
+        "value": 641.0999999999999,
+        "code": "SA"
+    },
+    {
+        "code3": "SDN",
+        "name": "Sudan",
+        "value": 455,
+        "code": "SD"
+    },
+    {
+        "code3": "SEN",
+        "name": "Senegal",
+        "value": 390.4,
+        "code": "SN"
+    },
+    {
+        "code3": "SGP",
+        "name": "Singapore",
+        "value": 679.8,
+        "code": "SG"
+    },
+    {
+        "code3": "SLE",
+        "name": "Sierra Leone",
+        "value": 450.7,
+        "code": "SL"
+    },
+    {
+        "code3": "SLV",
+        "name": "El Salvador",
+        "value": 613,
+        "code": "SV"
+    },
+    {
+        "code3": "SRB",
+        "name": "Serbia",
+        "value": 512.3000000000001,
+        "code": "RS"
+    },
+    {
+        "code3": "SUR",
+        "name": "Suriname",
+        "value": 626.9,
+        "code": "SR"
+    },
+    {
+        "code3": "SVN",
+        "name": "Slovenia",
+        "value": 584.8,
+        "code": "SI"
+    },
+    {
+        "code3": "SWE",
+        "name": "Sweden",
+        "value": 736.4,
+        "code": "SE"
+    },
+    {
+        "code3": "SWZ",
+        "name": "Swaziland",
+        "value": 486.7,
+        "code": "SZ"
+    },
+    {
+        "code3": "TCD",
+        "name": "Chad",
+        "value": 366.7,
+        "code": "TD"
+    },
+    {
+        "code3": "TGO",
+        "name": "Togo",
+        "value": 283.9,
+        "code": "TG"
+    },
+    {
+        "code3": "THA",
+        "name": "Thailand",
+        "value": 645.5,
+        "code": "TH"
+    },
+    {
+        "code3": "TJK",
+        "name": "Tajikistan",
+        "value": 478.59999999999997,
+        "code": "TJ"
+    },
+    {
+        "code3": "TKM",
+        "name": "Turkmenistan",
+        "value": 554.8,
+        "code": "TM"
+    },
+    {
+        "code3": "TTO",
+        "name": "Trinidad and Tobago",
+        "value": 616.8000000000001,
+        "code": "TT"
+    },
+    {
+        "code3": "TUN",
+        "name": "Tunisia",
+        "value": 473.9,
+        "code": "TN"
+    },
+    {
+        "code3": "TUR",
+        "name": "Turkey",
+        "value": 533.1999999999999,
+        "code": "TR"
+    },
+    {
+        "code3": "TZA",
+        "name": "Tanzania",
+        "value": 378.1,
+        "code": "TZ"
+    },
+    {
+        "code3": "UGA",
+        "name": "Uganda",
+        "value": 393.1,
+        "code": "UG"
+    },
+    {
+        "code3": "UKR",
+        "name": "Ukraine",
+        "value": 468.1,
+        "code": "UA"
+    },
+    {
+        "code3": "URY",
+        "name": "Uruguay",
+        "value": 648.5,
+        "code": "UY"
+    },
+    {
+        "code3": "USA",
+        "name": "United States",
+        "value": 711.9,
+        "code": "US"
+    },
+    {
+        "code3": "UZB",
+        "name": "Uzbekistan",
+        "value": 600.3,
+        "code": "UZ"
+    },
+    {
+        "code3": "VNM",
+        "name": "Vietnam",
+        "value": 536,
+        "code": "VN"
+    },
+    {
+        "code3": "ZAF",
+        "name": "South Africa",
+        "value": 464.20000000000005,
+        "code": "ZA"
+    },
+    {
+        "code3": "ZMB",
+        "name": "Zambia",
+        "value": 512.9,
+        "code": "ZM"
+    },
+    {
+        "code3": "ZWE",
+        "name": "Zimbabwe",
+        "value": 461.00000000000006,
+        "code": "ZW"
+    },
+    {
+        "code3": "VEN",
+        "name": "Venezuela, RB",
+        "value": 681,
+        "code": "VE"
+    },
+    {
+        "code3": "SVK",
+        "name": "Slovak Republic",
+        "value": 599.5,
+        "code": "SK"
+    },
+    {
+        "code3": "RUS",
+        "name": "Russian Federation",
+        "value": 571.6,
+        "code": "RU"
+    },
+    {
+        "code3": "HKG",
+        "name": "Hong Kong SAR, China",
+        "value": 547.4,
+        "code": "HK"
+    },
+    {
+        "code3": "LAO",
+        "name": "Lao PDR",
+        "value": 487.6,
+        "code": "LA"
+    },
+    {
+        "code3": "IRN",
+        "name": "Iran, Islamic Rep.",
+        "value": 468.6,
+        "code": "IR"
+    },
+    {
+        "code3": "COG",
+        "name": "Congo, Rep.",
+        "value": 451.70000000000005,
+        "code": "CG"
+    },
+    {
+        "code3": "EGY",
+        "name": "Egypt, Arab Rep.",
+        "value": 419.4,
+        "code": "EG"
+    },
+    {
+        "code3": "YEM",
+        "name": "Yemen, Rep.",
+        "value": 407.7,
+        "code": "YE"
+    },
+    {
+        "code3": "COD",
+        "name": "Congo, Dem. Rep.",
+        "value": 398.9,
+        "code": "CD"
+    },
+    {
+        "code3": "SYR",
+        "name": "Syrian Arab Republic",
+        "value": 300.59999999999997,
+        "code": "SY"
+    }
+]
