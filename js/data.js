@@ -8,12 +8,13 @@ var pathMap;
 var pathPie;
 var pathSemiPie;
 var pathBar;
+var i =0;
 
 
 var FpathMap = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/map.json';
 var FpathPie = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/JSONPIE/2015P.json';
 var FpathSemiPie = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/JSONSEMIPIE/2015SP.json';
-var FpathBar = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/BARJSON/2015BAR.json';
+var FpathBar = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/BARRAS.JSON';
 
 
 
@@ -113,6 +114,8 @@ Highcharts.getJSON(FpathMap, function (data) {
 
 
 Highcharts.getJSON(FpathBar, function (data) {
+    window.alert ( data.filter(function(n){i++; return n.champion ==='Aatrox';}).map(function(o){return([o.player + o.champion  , o.result])}).slice(0,math.min(30,i)), ),
+
     Highcharts.chart('barcontainer', {
         chart: {
             type: 'column'
@@ -141,10 +144,11 @@ Highcharts.getJSON(FpathBar, function (data) {
         },
         tooltip: {
             pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
-        },
+        }, 
         series: [{
             name: 'Population',
-            data: data,
+            data: data.filter(function(n){ if(n.champion ==='Aatrox'){i++}; return n.champion ==='Aatrox';}).map(function(o){return([o.player + o.champion  , o.result])}).slice(0,math.min(30,i)), 
+            //data.filter(function(item){return item.value <= slider.value}),
             dataLabels: {
                 enabled: true,
                 rotation: -90,
