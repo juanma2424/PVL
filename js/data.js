@@ -10,6 +10,12 @@ var TempSelecE;
 var TempSelecP;
 var codeCountry;
 
+var G_ONE;
+var G_TWO;
+var G_THREE;
+
+
+
 var FpathMap = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/map.json';
 var FpathData = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/visualLOL.json';
 var FpathFile = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/File.json';
@@ -69,6 +75,44 @@ slider.oninput = function () {
     output.innerHTML = this.value;
     GenerateMapScale();
 }
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    BARRA DE GRAFICO 1               ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+var sliderGO = document.getElementById("myRangeBar");
+var outputGO = document.getElementById("demoBar");
+outputGO.innerHTML = sliderGO.value;
+G_ONE =sliderGO.value;
+sliderGO.oninput = function () {
+    outputGO.innerHTML = this.value;
+    G_ONE = this.value;
+    generateCharts();
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    BARRA DE GRAFICO 2               ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+var sliderGT = document.getElementById("myRangeBarTwo");
+var outputGT = document.getElementById("demoBarTwo");
+outputGT.innerHTML = sliderGT.value;
+G_TWO =sliderGT.value;
+sliderGT.oninput = function () {
+    outputGT.innerHTML = this.value;
+    G_TWO = this.value;
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    BARRA DE GRAFICO 3               ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+var sliderGTT = document.getElementById("myRangeBarT");
+var outputGTT = document.getElementById("demoBarT");
+outputGTT.innerHTML = sliderGTT.value;
+G_THREE =sliderGT.value;
+sliderGTT.oninput = function () {
+    outputGTT.innerHTML = this.value;
+    G_THREE = this.value;
+}
+
 
 
 
@@ -360,7 +404,7 @@ function generateCharts(){
                 }, 
                 series: [{
                     name: 'Population',
-                    data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0,15), 
+                    data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0, G_ONE), 
                     //data.filter(function(item){return item.value <= slider.value}),
                     dataLabels: {
                         enabled: true,
