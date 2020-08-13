@@ -275,7 +275,7 @@ function GenerateMapScale() {
 ////////////////////////////////////////////////////////////////////////////////////
 function face() {
     var b = parseInt(pDataScore);
-    //codeCountry
+    changeCountryFilter()
     var rango = b;
     if (rango >= 400) {
         document.getElementById("myImg1").src = "DATA/IMG/ORO.png";
@@ -287,6 +287,40 @@ function face() {
         document.getElementById("myImg1").src = "DATA/IMG/COBRE.png";
     }
 }
+function changeCountryFilter(){
+    var tempRegion = "All"
+    if (codeCountry == "China"){
+        window.alert("LPL: ")
+        tempRegion = "LPL"
+    }else if(codeCountry == "United States of America"){
+        tempRegion = "LCS"
+    }else if(codeCountry == "Canada"){
+        tempRegion = "LCS"
+    }else if(codeCountry == "Spain"){
+        tempRegion = "LEC"
+    }else if(codeCountry == "Germany"){
+        tempRegion = "LEC"
+    }else if(codeCountry == "France"){
+        tempRegion = "LEC"
+    }else if(codeCountry == "United Kingdom"){
+        tempRegion = "LEC"
+    }else if(codeCountry == "Italy"){
+        tempRegion = "LEC"
+    }else if(codeCountry == "Russia"){
+        tempRegion = "LCL"
+    }else if(codeCountry == "Brazil"){
+        tempRegion = "BRCC"
+    }else if(codeCountry == "Mexico"){
+        tempRegion = "LLA"
+    }else if(codeCountry == "Australia"){
+        tempRegion = "OPL"
+    }
+    outputT.innerHTML = tempRegion
+    sliderT.value = tempRegion
+    TempSelecT = tempRegion
+    generateCharts()
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////                    GENEARTE FIGURAS                 ///////////////////
