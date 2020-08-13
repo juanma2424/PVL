@@ -285,8 +285,6 @@ function face() {
     }
 }
 
-
-
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////                    GENEARTE FIGURAS                 ///////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -324,7 +322,7 @@ function generateCharts(){
                 }, 
                 series: [{
                     name: 'Population',
-                    data: data.filter(function(n){  return (n.champion == TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league == TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team == TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0,15), 
+                    data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0,15), 
                     //data.filter(function(item){return item.value <= slider.value}),
                     dataLabels: {
                         enabled: true,
