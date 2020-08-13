@@ -11,9 +11,7 @@ var TempSelecP;
 var codeCountry;
 
 var FpathMap = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/map.json';
-var FpathPie = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/JSONPIE/2015P.json';
-var FpathSemiPie = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/JSONSEMIPIE/2015SP.json';
-var FpathBar = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/BARRAS.JSON';
+var FpathData = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/visualLOL.json';
 
 
 
@@ -327,7 +325,8 @@ function changeCountryFilter(){
 ////////////////////////////////////////////////////////////////////////////////////
 function generateCharts(){
 
-    Highcharts.getJSON(FpathBar, function (data) {
+    //GRAFICO DE BARRAS
+    Highcharts.getJSON(FpathData, function (data) {
         //window.alert(TempSelecT)
             Highcharts.chart('barcontainer', {
                 chart: {
@@ -378,10 +377,98 @@ function generateCharts(){
             });
         })
 
+        //GRAFICO DE CIRCULAR
+        Highcharts.getJSON(FpathData, function (data) {
+
+            Highcharts.chart('piecontainer', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Health in countries 2015'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                accessibility: {
+                    point: {
+                        valueSuffix: '%'
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Health',
+                    colorByPoint: true,
+                    data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.kda])}).slice(0,15),
+                }]
+            });
+        })
 
 
+           //GRAFICO DE BARRAS
+    Highcharts.getJSON(FpathData, function (data) {
+        //window.alert(TempSelecT)
+            Highcharts.chart('semipiecontainer', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Happiest countries 2015'
+                },
+                xAxis: {
+                    type: 'category',
+                    labels: {
+                        rotation: -45,
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Happieness'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
+                }, 
+                series: [{
+                    name: 'Population',
+                    data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0,15), 
+                    //data.filter(function(item){return item.value <= slider.value}),
+                    dataLabels: {
+                        enabled: true,
+                        rotation: -90,
+                        color: '#FFFFFF',
+                        align: 'right',
+                        format: '{point.y:.1f}', // one decimal
+                        y: 10, // 10 pixels down from the top
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                }]
+            });
+        })
 
-        
 }
 
 
