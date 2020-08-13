@@ -292,6 +292,7 @@ function face() {
 ////////////                    GENEARTE FIGURAS                 ///////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 function generateCharts(){
+
     Highcharts.getJSON(FpathBar, function (data) {
         //window.alert(TempSelecT)
             Highcharts.chart('barcontainer', {
@@ -342,6 +343,11 @@ function generateCharts(){
                 }]
             });
         })
+
+
+
+
+        
 }
 
 
