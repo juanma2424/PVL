@@ -1,19 +1,18 @@
-//torneo
-//equipo
-//personaje
+////////////////////////////////////////////////////////////////////////////////////
+////////////                        VARIABLES                    ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
 var pathMap;
 var pathPie;
 var pathSemiPie;
 var pathBar;
-
+var TempSelecT;
+var TempSelecE;
+var TempSelecP;
 
 var FpathMap = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/map.json';
 var FpathPie = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/JSONPIE/2015P.json';
 var FpathSemiPie = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/JSONSEMIPIE/2015SP.json';
 var FpathBar = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/BARRAS.JSON';
-var TempSelecT;
-var TempSelecE;
-var TempSelecP;
 
 
 
@@ -46,7 +45,7 @@ sliderE.oninput = function() {
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-////////////                   SELECT DE PERSONAJE                  ///////////////////
+////////////                   SELECT DE PERSONAJE               ///////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 var sliderP = document.getElementById("selectP");
 var outputP = document.getElementById("outputP");
@@ -58,253 +57,219 @@ sliderP.oninput = function() {
     generateCharts()
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    BARRA DE MAPA                   ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value;
 
-
-//////INICIO_DEFAULT///////
-generateCharts()
-Highcharts.getJSON(FpathMap, function (data) {
-
-    //Prevent logarithmic errors in color calulcation
-    data.forEach(function (p) {
-        p.value = (p.value < 1 ? 1 : p.value);
-    });
-
-    // Initiate the chart
-    var chart = Highcharts.mapChart('container', {
-        chart: {
-            map: 'custom/world'
-        },
-
-        title: {
-            text: 'Happiest countries in the world 2015'
-        },
-
-        plotOptions: {
-            series: {
-                point: {
-                    events: {
-                        select: function () {
-                            var text = '',
-                                chart = this.series.chart;
-                                pData = this.name;
-                                pDataScore = this.value;
-                                face();
-                            if (!chart.selectedLabel) {
-                                chart.selectedLabel = chart.renderer.label(text, 0, 320)
-                                    .add();
-                            } else {
-                                chart.selectedLabel.attr({
-                                    text: text
-                                });
-                            }
-                        },
-                        unselect: function () {
-                            var text = '',
-                                chart = this.series.chart;
-                            if (!chart.unselectedLabel) {
-                                chart.unselectedLabel = chart.renderer.label(text, 0, 300)
-                                    .add();
-                            } else {
-                                chart.unselectedLabel.attr({
-                                    text: text
-                                });
-                            }
-                        }
-                    }
-                }
-            }
-        },
-
-        mapNavigation: {
-            enabled: true,
-            enableDoubleClickZoomTo: true
-        },
-
-        colorAxis: {
-            min: 1,
-            max: 1000,
-            type: 'logarithmic'
-        },
-
-        series: [{
-            data: data,
-            joinBy: ['iso-a3', 'code3'],
-            name: 'Happiness',
-            allowPointSelect: true,
-            states: {
-                hover: {
-                    color: '#a4edba'
-                },
-                select: {
-                    color: '#EFFFEF',
-                    borderColor: 'black',
-                    dashStyle: 'dot'
-                }
-            },
-            tooltip: {
-                valueSuffix: ''
-            }
-        }]
-    });
-   
-});
-
-
-
-
-//////INICIO///////
 slider.oninput = function () {
-
     output.innerHTML = this.value;
-
-    
-Highcharts.getJSON(FpathMap, function (data) {
-
-    //Prevent logarithmic errors in color calulcation
-    data.forEach(function (p) {
-        p.value = (p.value < 1 ? 1 : p.value);
-    });
-
-    // Initiate the chart
-    var chart = Highcharts.mapChart('container', {
-        chart: {
-            map: 'custom/world'
-        },
-
-        title: {
-            text: 'Happiest countries in the world 2015'
-        },
-
-        plotOptions: {
-            series: {
-                point: {
-                    events: {
-                        select: function () {
-                            var text = '',
-                                chart = this.series.chart;
-                                pData = this.name;
-                                pDataScore = this.value;
-                                face();
-                            if (!chart.selectedLabel) {
-                                chart.selectedLabel = chart.renderer.label(text, 0, 320)
-                                    .add();
-                            } else {
-                                chart.selectedLabel.attr({
-                                    text: text
-                                });
-                            }
-                        },
-                        unselect: function () {
-                            var text = '',
-                                chart = this.series.chart;
-                            if (!chart.unselectedLabel) {
-                                chart.unselectedLabel = chart.renderer.label(text, 0, 300)
-                                    .add();
-                            } else {
-                                chart.unselectedLabel.attr({
-                                    text: text
-                                });
-                            }
-                        }
-                    }
-                }
-            }
-        },
-
-        mapNavigation: {
-            enabled: true,
-            enableDoubleClickZoomTo: true
-        },
-
-        colorAxis: {
-            min: 1,
-            max: 1000,
-            type: 'logarithmic'
-        },
-
-        series: [{
-            data: data.filter(function(item){return item.value <= slider.value}),
-            joinBy: ['iso-a3', 'code3'],
-            name: 'Happiness',
-            allowPointSelect: true,
-            states: {
-                hover: {
-                    color: '#a4edba'
-                },
-                select: {
-                    color: '#EFFFEF',
-                    borderColor: 'black',
-                    dashStyle: 'dot'
-                }
-            },
-            tooltip: {
-                valueSuffix: ''
-            }
-        }]
-    });
-   
-});
-
-
-
-
-
-
-Highcharts.getJSON(FpathBar, function (data) {
-    Highcharts.chart('barcontainer', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-            type: 'category',
-            labels: {
-                rotation: -45,
-                style: {
-                    fontSize: '13px',
-                    fontFamily: 'Verdana, sans-serif'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Happieness'
-            }
-        },
-        legend: {
-            enabled: false
-        },
-        tooltip: {
-            pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
-        },
-        series: [{
-            name: 'Population',
-            data: data,
-            dataLabels: {
-                enabled: true,
-                rotation: -90,
-                color: '#FFFFFF',
-                align: 'right',
-                format: '{point.y:.1f}', // one decimal
-                y: 10, // 10 pixels down from the top
-                style: {
-                    fontSize: '13px',
-                    fontFamily: 'Verdana, sans-serif'
-                }
-            }
-        }]
-    });
-})
-
+    GenerateMapScale();
 }
 
 
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    CARGA PRINCIPAL                  ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+generateCharts()
+GenerateMap() 
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    MAPA DEFAULT                     ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+function GenerateMap() {
+    Highcharts.getJSON(FpathMap, function (data) {
+
+        //Prevent logarithmic errors in color calulcation
+        data.forEach(function (p) {
+            p.value = (p.value < 1 ? 1 : p.value);
+        });
+    
+        // Initiate the chart
+        var chart = Highcharts.mapChart('container', {
+            chart: {
+                map: 'custom/world'
+            },
+    
+            title: {
+                text: 'Happiest countries in the world 2015'
+            },
+    
+            plotOptions: {
+                series: {
+                    point: {
+                        events: {
+                            select: function () {
+                                var text = '',
+                                    chart = this.series.chart;
+                                    pData = this.name;
+                                    pDataScore = this.value;
+                                    face();
+                                if (!chart.selectedLabel) {
+                                    chart.selectedLabel = chart.renderer.label(text, 0, 320)
+                                        .add();
+                                } else {
+                                    chart.selectedLabel.attr({
+                                        text: text
+                                    });
+                                }
+                            },
+                            unselect: function () {
+                                var text = '',
+                                    chart = this.series.chart;
+                                if (!chart.unselectedLabel) {
+                                    chart.unselectedLabel = chart.renderer.label(text, 0, 300)
+                                        .add();
+                                } else {
+                                    chart.unselectedLabel.attr({
+                                        text: text
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+    
+            mapNavigation: {
+                enabled: true,
+                enableDoubleClickZoomTo: true
+            },
+    
+            colorAxis: {
+                min: 1,
+                max: 1000,
+                type: 'logarithmic'
+            },
+    
+            series: [{
+                data: data,
+                joinBy: ['iso-a3', 'code3'],
+                name: 'Happiness',
+                allowPointSelect: true,
+                states: {
+                    hover: {
+                        color: '#a4edba'
+                    },
+                    select: {
+                        color: '#EFFFEF',
+                        borderColor: 'black',
+                        dashStyle: 'dot'
+                    }
+                },
+                tooltip: {
+                    valueSuffix: ''
+                }
+            }]
+        });
+       
+    });
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    MAPA SACALA                      ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+function GenerateMapScale() {
+    Highcharts.getJSON(FpathMap, function (data) {
+
+        //Prevent logarithmic errors in color calulcation
+        data.forEach(function (p) {
+            p.value = (p.value < 1 ? 1 : p.value);
+        });
+    
+        // Initiate the chart
+        var chart = Highcharts.mapChart('container', {
+            chart: {
+                map: 'custom/world'
+            },
+    
+            title: {
+                text: 'Happiest countries in the world 2015'
+            },
+    
+            plotOptions: {
+                series: {
+                    point: {
+                        events: {
+                            select: function () {
+                                var text = '',
+                                    chart = this.series.chart;
+                                    pData = this.name;
+                                    pDataScore = this.value;
+                                    face();
+                                if (!chart.selectedLabel) {
+                                    chart.selectedLabel = chart.renderer.label(text, 0, 320)
+                                        .add();
+                                } else {
+                                    chart.selectedLabel.attr({
+                                        text: text
+                                    });
+                                }
+                            },
+                            unselect: function () {
+                                var text = '',
+                                    chart = this.series.chart;
+                                if (!chart.unselectedLabel) {
+                                    chart.unselectedLabel = chart.renderer.label(text, 0, 300)
+                                        .add();
+                                } else {
+                                    chart.unselectedLabel.attr({
+                                        text: text
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+    
+            mapNavigation: {
+                enabled: true,
+                enableDoubleClickZoomTo: true
+            },
+    
+            colorAxis: {
+                min: 1,
+                max: 1000,
+                type: 'logarithmic'
+            },
+    
+            series: [{
+                data: data.filter(function(item){return item.value <= slider.value}),
+                joinBy: ['iso-a3', 'code3'],
+                name: 'Happiness',
+                allowPointSelect: true,
+                states: {
+                    hover: {
+                        color: '#a4edba'
+                    },
+                    select: {
+                        color: '#EFFFEF',
+                        borderColor: 'black',
+                        dashStyle: 'dot'
+                    }
+                },
+                tooltip: {
+                    valueSuffix: ''
+                }
+            }]
+        });
+       
+    });    
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    FACE MAP                         ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
 function face() {
     var b = parseInt(pDataScore);
     var rango = b;
@@ -320,6 +285,11 @@ function face() {
     }
 }
 
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    GENEARTE FIGURAS                 ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
 function generateCharts(){
     Highcharts.getJSON(FpathBar, function (data) {
         //window.alert(TempSelecT)
@@ -372,6 +342,12 @@ function generateCharts(){
             });
         })
 }
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    SORT                             ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
 function predicateBy(prop){
     return function(a,b){
        if (a[prop] > b[prop]){
