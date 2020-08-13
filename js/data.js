@@ -12,6 +12,7 @@ var codeCountry;
 
 var FpathMap = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/map.json';
 var FpathData = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/visualLOL.json';
+var FpathFile = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/File.json';
 
 
 
