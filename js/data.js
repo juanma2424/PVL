@@ -1,8 +1,6 @@
 //torneo
 //equipo
 //personaje
-
-
 var pathMap;
 var pathPie;
 var pathSemiPie;
@@ -17,16 +15,42 @@ var FpathBar = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUE
 
 
 
- var slider1 = document.getElementById("select");
- var output1 = document.getElementById("output");
- output1.innerHTML = slider1.value;
- slider1.oninput = function() {
-    output1.innerHTML = this.value;
-  }
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                   SELECT DE TORNEO                  ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+var sliderT = document.getElementById("selectT");
+var outputT = document.getElementById("outputT");
+outputT.innerHTML = sliderT.value;
+
+sliderT.oninput = function() {
+    outputT.innerHTML = this.value;
+}
 
 
 
+////////////////////////////////////////////////////////////////////////////////////
+////////////                   SELECT DE EQUIPO                  ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+var sliderE = document.getElementById("selectE");
+var outputE = document.getElementById("outputE");
+outputE.innerHTML = sliderE.value;
 
+sliderE.oninput = function() {
+    outputE.innerHTML = this.value;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                   SELECT DE PERSONAJE                  ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+var sliderP = document.getElementById("selectP");
+var outputP = document.getElementById("outputP");
+outputP.innerHTML = sliderP.value;
+
+sliderP.oninput = function() {
+    outputP.innerHTML = this.value;
+}
 
 
 var slider = document.getElementById("myRange");
@@ -290,7 +314,7 @@ Highcharts.getJSON(FpathBar, function (data) {
             type: 'column'
         },
         title: {
-            text: 'Happiest countries 2015'
+            text: ''
         },
         xAxis: {
             type: 'category',
@@ -351,6 +375,4 @@ function face() {
     if ((rango < 200)) {
         document.getElementById("myImg1").src = "DATA/IMG/COBRE.png";
     }
-
-
 }
