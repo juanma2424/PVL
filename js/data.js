@@ -8,6 +8,7 @@ var pathBar;
 var TempSelecT;
 var TempSelecE;
 var TempSelecP;
+var codeCountry;
 
 var FpathMap = 'https://raw.githubusercontent.com/juanma2424/PVL/master/DATA/NUEVO/map.json';
 var FpathPie = 'https://raw.githubusercontent.com/juanma2424/Happy-Web/juanma/DATA/JSON/JSONPIE/2015P.json';
@@ -110,6 +111,7 @@ function GenerateMap() {
                                     chart = this.series.chart;
                                     pData = this.name;
                                     pDataScore = this.value;
+                                    codeCountry = this.name;
                                     face();
                                 if (!chart.selectedLabel) {
                                     chart.selectedLabel = chart.renderer.label(text, 0, 320)
@@ -203,6 +205,7 @@ function GenerateMapScale() {
                                     chart = this.series.chart;
                                     pData = this.name;
                                     pDataScore = this.value;
+                                    codeCountry = this.name;
                                     face();
                                 if (!chart.selectedLabel) {
                                     chart.selectedLabel = chart.renderer.label(text, 0, 320)
@@ -272,8 +275,8 @@ function GenerateMapScale() {
 ////////////////////////////////////////////////////////////////////////////////////
 function face() {
     var b = parseInt(pDataScore);
+    //codeCountry
     var rango = b;
-
     if (rango >= 400) {
         document.getElementById("myImg1").src = "DATA/IMG/ORO.png";
     }
