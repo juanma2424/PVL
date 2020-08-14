@@ -513,29 +513,40 @@ function face() {
 function changeCountryFilter(){
     var tempRegion = "All"
     if (codeCountry == "China"){
-        window.alert("LPL: ")
+        window.alert("LPL: De este torneo han salido 2 de los campeones mundiales, Invictus Gaming y FunPlus Phoenix, logrando ser la segunda región con mas ganadres a nivel mundial.")
         tempRegion = "LPL"
     }else if(codeCountry == "United States of America"){
+        window.alert("LCS: Fue el primer torneo regional de League of Legends, creado por la organización Riot Games, los cuales tambien son los creadores del juego.")
         tempRegion = "LCS"
     }else if(codeCountry == "Canada"){
+        window.alert("LCS: Fue el primer torneo regional de League of Legends, creado por la organización Riot Games, los cuales tambien son los creadores del juego.")
         tempRegion = "LCS"
     }else if(codeCountry == "Spain"){
+        window.alert("LEC: Previamente conocido como EW LCS, es el torneo europeo de mayor nivel y el equipo que ha dominado la escena ha sido G2 Esports, logrando ser multiples veces subcampeon del mundial.")
         tempRegion = "LEC"
     }else if(codeCountry == "Germany"){
+        window.alert("LEC: Previamente conocido como EW LCS, es el torneo europeo de mayor nivel y el equipo que ha dominado la escena ha sido G2 Esports, logrando ser multiples veces subcampeon del mundial.")
         tempRegion = "LEC"
     }else if(codeCountry == "France"){
+        window.alert("LEC: Previamente conocido como EW LCS, es el torneo europeo de mayor nivel y el equipo que ha dominado la escena ha sido G2 Esports, logrando ser multiples veces subcampeon del mundial.")
         tempRegion = "LEC"
     }else if(codeCountry == "United Kingdom"){
+        window.alert("LEC: Previamente conocido como EW LCS, es el torneo europeo de mayor nivel y el equipo que ha dominado la escena ha sido G2 Esports, logrando ser multiples veces subcampeon del mundial.")
         tempRegion = "LEC"
     }else if(codeCountry == "Italy"){
+        window.alert("LEC: Previamente conocido como EW LCS, es el torneo europeo de mayor nivel y el equipo que ha dominado la escena ha sido G2 Esports, logrando ser multiples veces subcampeon del mundial.")
         tempRegion = "LEC"
     }else if(codeCountry == "Russia"){
+        window.alert("LCL: Este torneo es centrado en Rusia y fue muy dominante en los primeros años del juego, pero a lo largo de los años ha perdido mucha fuerza en comparación a otra regiones.")
         tempRegion = "LCL"
     }else if(codeCountry == "Brazil"){
+        window.alert("BRCC: El torneo Brasileño de League of Legends llevó al primer equipo latinoamericano al mundial, y hasta hace poco era el torneo más prestigioso de latinoamerica.")
         tempRegion = "BRCC"
     }else if(codeCountry == "Mexico"){
+        window.alert("LLA: Es el torneo que combina las regiones de latinoamerica norte y latinoamerica sur. Está situado en Mexico y para participar en este se debe acender por medio de torneos locales en diferentes países.")
         tempRegion = "LLA"
     }else if(codeCountry == "Australia"){
+        window.alert("OLP: Por más que el torneo de oceanía, centrado en Australia, no ha llegado a ganar en competencias mundiales, siempre que llegan usan combinaciones de personajes atipicas e interesantes.")
         tempRegion = "OPL"
     }
     outputT.innerHTML = tempRegion
@@ -558,7 +569,7 @@ function generateCharts(){
                     type: 'column'
                 },
                 title: {
-                    text: 'Happiest countries 2015'
+                    text: 'Porcentaje de victorias de los jugadores y personajes'
                 },
                 xAxis: {
                     type: 'category',
@@ -573,17 +584,17 @@ function generateCharts(){
                 yAxis: {
                     min: 0,
                     title: {
-                        text: 'Happieness'
+                        text: 'Winrate'
                     }
                 },
                 legend: {
                     enabled: false
                 },
                 tooltip: {
-                    pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
+                    pointFormat: 'Winrate <b>{point.y:.1f}</b>'
                 }, 
                 series: [{
-                    name: 'Population',
+                    name: 'Winrate',
                     data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0, G_ONE), 
                     //data.filter(function(item){return item.value <= slider.value}),
                     dataLabels: {
@@ -650,7 +661,7 @@ function generateCharts(){
                     type: 'column'
                 },
                 title: {
-                    text: 'Happiest countries 2015'
+                    text: 'Daño promedio realizado'
                 },
                 xAxis: {
                     type: 'category',
@@ -665,17 +676,17 @@ function generateCharts(){
                 yAxis: {
                     min: 0,
                     title: {
-                        text: 'Happieness'
+                        text: 'Daño a campeones'
                     }
                 },
                 legend: {
                     enabled: false
                 },
                 tooltip: {
-                    pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
+                    pointFormat: 'Daño: <b>{point.y:.1f}hp</b>'
                 }, 
                 series: [{
-                    name: 'Population',
+                    name: 'Daño Realizado',
                     data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("damagetochampions") ).map(function(o){return([o.player + " - "+o.champion  , o.damagetochampions])}).slice(0,15), 
                     //data.filter(function(item){return item.value <= slider.value}),
                     dataLabels: {
