@@ -378,7 +378,7 @@ function generateCharts(){
                     type: 'column'
                 },
                 title: {
-                    text: 'Happiest countries 2015'
+                    text: 'Porcentaje de victorias de los jugadores y personajes'
                 },
                 xAxis: {
                     type: 'category',
@@ -393,17 +393,17 @@ function generateCharts(){
                 yAxis: {
                     min: 0,
                     title: {
-                        text: 'Happieness'
+                        text: 'Winrate'
                     }
                 },
                 legend: {
                     enabled: false
                 },
                 tooltip: {
-                    pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
+                    pointFormat: 'Winrate <b>{point.y:.1f}</b>'
                 }, 
                 series: [{
-                    name: 'Population',
+                    name: 'Winrate',
                     data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0, G_ONE), 
                     //data.filter(function(item){return item.value <= slider.value}),
                     dataLabels: {
@@ -470,7 +470,7 @@ function generateCharts(){
                     type: 'column'
                 },
                 title: {
-                    text: 'Happiest countries 2015'
+                    text: 'Daño promedio realizado'
                 },
                 xAxis: {
                     type: 'category',
@@ -485,17 +485,17 @@ function generateCharts(){
                 yAxis: {
                     min: 0,
                     title: {
-                        text: 'Happieness'
+                        text: 'Daño a campeones'
                     }
                 },
                 legend: {
                     enabled: false
                 },
                 tooltip: {
-                    pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
+                    pointFormat: 'Daño: <b>{point.y:.1f}hp</b>'
                 }, 
                 series: [{
-                    name: 'Population',
+                    name: 'Daño Realizado',
                     data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("damagetochampions") ).map(function(o){return([o.player + " - "+o.champion  , o.damagetochampions])}).slice(0,15), 
                     //data.filter(function(item){return item.value <= slider.value}),
                     dataLabels: {
