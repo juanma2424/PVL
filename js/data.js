@@ -333,29 +333,40 @@ function face() {
 function changeCountryFilter(){
     var tempRegion = "All"
     if (codeCountry == "China"){
-        window.alert("LPL: ")
+        window.alert("LPL: De este torneo han salido 2 de los campeones mundiales, Invictus Gaming y FunPlus Phoenix, logrando ser la segunda región con mas ganadres a nivel mundial.")
         tempRegion = "LPL"
     }else if(codeCountry == "United States of America"){
+        window.alert("LCS: Fue el primer torneo regional de League of Legends, creado por la organización Riot Games, los cuales tambien son los creadores del juego.")
         tempRegion = "LCS"
     }else if(codeCountry == "Canada"){
+        window.alert("LCS: Fue el primer torneo regional de League of Legends, creado por la organización Riot Games, los cuales tambien son los creadores del juego.")
         tempRegion = "LCS"
     }else if(codeCountry == "Spain"){
+        window.alert("LEC: Previamente conocido como EW LCS, es el torneo europeo de mayor nivel y el equipo que ha dominado la escena ha sido G2 Esports, logrando ser multiples veces subcampeon del mundial.")
         tempRegion = "LEC"
     }else if(codeCountry == "Germany"){
+        window.alert("LEC: Previamente conocido como EW LCS, es el torneo europeo de mayor nivel y el equipo que ha dominado la escena ha sido G2 Esports, logrando ser multiples veces subcampeon del mundial.")
         tempRegion = "LEC"
     }else if(codeCountry == "France"){
+        window.alert("LEC: Previamente conocido como EW LCS, es el torneo europeo de mayor nivel y el equipo que ha dominado la escena ha sido G2 Esports, logrando ser multiples veces subcampeon del mundial.")
         tempRegion = "LEC"
     }else if(codeCountry == "United Kingdom"){
+        window.alert("LEC: Previamente conocido como EW LCS, es el torneo europeo de mayor nivel y el equipo que ha dominado la escena ha sido G2 Esports, logrando ser multiples veces subcampeon del mundial.")
         tempRegion = "LEC"
     }else if(codeCountry == "Italy"){
+        window.alert("LEC: Previamente conocido como EW LCS, es el torneo europeo de mayor nivel y el equipo que ha dominado la escena ha sido G2 Esports, logrando ser multiples veces subcampeon del mundial.")
         tempRegion = "LEC"
     }else if(codeCountry == "Russia"){
+        window.alert("LCL: Este torneo es centrado en Rusia y fue muy dominante en los primeros años del juego, pero a lo largo de los años ha perdido mucha fuerza en comparación a otra regiones.")
         tempRegion = "LCL"
     }else if(codeCountry == "Brazil"){
+        window.alert("BRCC: El torneo Brasileño de League of Legends llevó al primer equipo latinoamericano al mundial, y hasta hace poco era el torneo más prestigioso de latinoamerica.")
         tempRegion = "BRCC"
     }else if(codeCountry == "Mexico"){
+        window.alert("LLA: Es el torneo que combina las regiones de latinoamerica norte y latinoamerica sur. Está situado en Mexico y para participar en este se debe acender por medio de torneos locales en diferentes países.")
         tempRegion = "LLA"
     }else if(codeCountry == "Australia"){
+        window.alert("OLP: Por más que el torneo de oceanía, centrado en Australia, no ha llegado a ganar en competencias mundiales, siempre que llegan usan combinaciones de personajes atipicas e interesantes.")
         tempRegion = "OPL"
     }
     outputT.innerHTML = tempRegion
