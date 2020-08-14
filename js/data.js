@@ -86,7 +86,7 @@ G_ONE =sliderGO.value;
 sliderGO.oninput = function () {
     outputGO.innerHTML = this.value;
     G_ONE = this.value;
-    generateCharts();
+    generateGF1();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -99,6 +99,7 @@ G_TWO =sliderGT.value;
 sliderGT.oninput = function () {
     outputGT.innerHTML = this.value;
     G_TWO = this.value;
+    generateGF3();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -111,10 +112,8 @@ G_THREE =sliderGT.value;
 sliderGTT.oninput = function () {
     outputGTT.innerHTML = this.value;
     G_THREE = this.value;
+    generateGF2();
 }
-
-
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -122,6 +121,187 @@ sliderGTT.oninput = function () {
 ////////////////////////////////////////////////////////////////////////////////////
 generateCharts()
 GenerateMap() 
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    CRAFICO UNO                      ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+function generateGF1(){
+
+    //GRAFICO DE BARRAS
+    Highcharts.getJSON(FpathData, function (data) {
+        //window.alert(TempSelecT)
+            Highcharts.chart('barcontainer', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Happiest countries 2015'
+                },
+                xAxis: {
+                    type: 'category',
+                    labels: {
+                        rotation: -45,
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Happieness'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
+                }, 
+                series: [{
+                    name: 'Population',
+                    data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0, G_ONE), 
+                    //data.filter(function(item){return item.value <= slider.value}),
+                    dataLabels: {
+                        enabled: true,
+                        rotation: -90,
+                        color: '#FFFFFF',
+                        align: 'right',
+                        format: '{point.y:.1f}', // one decimal
+                        y: 10, // 10 pixels down from the top
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                }]
+            });
+        })
+}
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    CRAFICO DOS                      ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+
+function generateGF2(){
+        //GRAFICO DE CIRCULAR
+        Highcharts.getJSON(FpathFile, function (data) {
+
+            Highcharts.chart('piecontainer', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Popularidad de personajes'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.y:.1f} juegos</b>'
+                },
+                accessibility: {
+                    point: {
+                        valueSuffix: '%'
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f}%'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Cantidad de juegos',
+                    colorByPoint: true,
+                    data: data.filter(function(n){  return (n.league === TempSelecT)}).filter(function(n){  return (n.team === TempSelecE)}).sort( predicateBy("result") ).map(function(o){return([o.champion  , o.result])}).slice(0,5),
+                }]
+            });
+        })
+
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////                    CRAFICO TRES                     ///////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+function generateGF3(){
+           //GRAFICO DE BARRAS
+    Highcharts.getJSON(FpathData, function (data) {
+        //window.alert(TempSelecT)
+            Highcharts.chart('semipiecontainer', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Happiest countries 2015'
+                },
+                xAxis: {
+                    type: 'category',
+                    labels: {
+                        rotation: -45,
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Happieness'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
+                }, 
+                series: [{
+                    name: 'Population',
+                    data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("damagetochampions") ).map(function(o){return([o.player + " - "+o.champion  , o.damagetochampions])}).slice(0,15), 
+                    //data.filter(function(item){return item.value <= slider.value}),
+                    dataLabels: {
+                        enabled: true,
+                        rotation: -90,
+                        color: '#FFFFFF',
+                        align: 'right',
+                        format: '{point.y:.1f}', // one decimal
+                        y: 10, // 10 pixels down from the top
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                }]
+            });
+        })
+
+}
+
+
+
+
+
+
+
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////
