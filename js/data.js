@@ -650,7 +650,7 @@ function generateCharts(){
                 series: [{
                     name: 'Cantidad de juegos',
                     colorByPoint: true,
-                    data: data.filter(function(n){  return (n.league === TempSelecT)}).filter(function(n){  return (n.team === TempSelecE)}).sort( predicateBy("result") ).map(function(o){return([o.champion  , o.result])}).slice(0,5),
+                    data: data.filter(function(n){  return (n.league === TempSelecT || (TempSelecE != 'All' && TempSelecT === 'All'))}).filter(function(n){  return (n.team === TempSelecE)}).sort( predicateBy("result") ).map(function(o){return([o.champion  , o.result])}).slice(0,5),
                 }]
             });
         })
