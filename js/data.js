@@ -130,58 +130,58 @@ GenerateMap()
 ////////////////////////////////////////////////////////////////////////////////////
 
 function generateGF1(){
-
-    //GRAFICO DE BARRAS
-    Highcharts.getJSON(FpathData, function (data) {
-        //window.alert(TempSelecT)
-            Highcharts.chart('barcontainer', {
-                chart: {
-                    type: 'column'
-                },
+//GRAFICO DE BARRAS
+Highcharts.getJSON(FpathData, function (data) {
+    //window.alert(TempSelecT)
+        Highcharts.chart('barcontainer', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Porcentaje de victorias de los jugadores y personajes'
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
                 title: {
-                    text: 'Happiest countries 2015'
-                },
-                xAxis: {
-                    type: 'category',
-                    labels: {
-                        rotation: -45,
-                        style: {
-                            fontSize: '13px',
-                            fontFamily: 'Verdana, sans-serif'
-                        }
+                    text: 'Winrate'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: 'Winrate <b>{point.y:.1f}</b>'
+            }, 
+            series: [{
+                name: 'Winrate',
+                data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0, G_ONE), 
+                //data.filter(function(item){return item.value <= slider.value}),
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    format: '{point.y:.1f}', // one decimal
+                    y: 10, // 10 pixels down from the top
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
                     }
-                },
-                yAxis: {
-                    min: 0,
-                    title: {
-                        text: 'Happieness'
-                    }
-                },
-                legend: {
-                    enabled: false
-                },
-                tooltip: {
-                    pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
-                }, 
-                series: [{
-                    name: 'Population',
-                    data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("result") ).map(function(o){return([o.player + " - "+o.champion  , o.result])}).slice(0, G_ONE), 
-                    //data.filter(function(item){return item.value <= slider.value}),
-                    dataLabels: {
-                        enabled: true,
-                        rotation: -90,
-                        color: '#FFFFFF',
-                        align: 'right',
-                        format: '{point.y:.1f}', // one decimal
-                        y: 10, // 10 pixels down from the top
-                        style: {
-                            fontSize: '13px',
-                            fontFamily: 'Verdana, sans-serif'
-                        }
-                    }
-                }]
-            });
-        })
+                }
+            }]
+        });
+    })
+
 }
 
 
@@ -193,44 +193,44 @@ function generateGF1(){
 
 
 function generateGF2(){
-        //GRAFICO DE CIRCULAR
-        Highcharts.getJSON(FpathFile, function (data) {
+       //GRAFICO DE CIRCULAR
+       Highcharts.getJSON(FpathFile, function (data) {
 
-            Highcharts.chart('piecontainer', {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false,
-                    type: 'pie'
-                },
-                title: {
-                    text: 'Popularidad de personajes'
-                },
-                tooltip: {
-                    pointFormat: '{series.name}: <b>{point.y:.1f} juegos</b>'
-                },
-                accessibility: {
-                    point: {
-                        valueSuffix: '%'
+        Highcharts.chart('piecontainer', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Popularidad de personajes'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.y:.1f} juegos</b>'
+            },
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f}%'
                     }
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f}%'
-                        }
-                    }
-                },
-                series: [{
-                    name: 'Cantidad de juegos',
-                    colorByPoint: true,
-                    data: data.filter(function(n){  return (n.league === TempSelecT)}).filter(function(n){  return (n.team === TempSelecE)}).sort( predicateBy("result") ).map(function(o){return([o.champion  , o.result])}).slice(0,5),
-                }]
-            });
-        })
+                }
+            },
+            series: [{
+                name: 'Cantidad de juegos',
+                colorByPoint: true,
+                data: data.filter(function(n){  return (n.league === TempSelecT)}).filter(function(n){  return (n.team === TempSelecE)}).sort( predicateBy("result") ).map(function(o){return([o.champion  , o.result])}).slice(0,5),
+            }]
+        });
+    })
 
 }
 
@@ -240,7 +240,6 @@ function generateGF2(){
 ////////////////////////////////////////////////////////////////////////////////////
 
 function generateGF3(){
-           //GRAFICO DE BARRAS
     Highcharts.getJSON(FpathData, function (data) {
         //window.alert(TempSelecT)
             Highcharts.chart('semipiecontainer', {
@@ -248,7 +247,7 @@ function generateGF3(){
                     type: 'column'
                 },
                 title: {
-                    text: 'Happiest countries 2015'
+                    text: 'Daño promedio realizado'
                 },
                 xAxis: {
                     type: 'category',
@@ -263,17 +262,17 @@ function generateGF3(){
                 yAxis: {
                     min: 0,
                     title: {
-                        text: 'Happieness'
+                        text: 'Daño a campeones'
                     }
                 },
                 legend: {
                     enabled: false
                 },
                 tooltip: {
-                    pointFormat: 'Happiness Rank: <b>{point.y:.1f} millions</b>'
+                    pointFormat: 'Daño: <b>{point.y:.1f}hp</b>'
                 }, 
                 series: [{
-                    name: 'Population',
+                    name: 'Daño Realizado',
                     data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("damagetochampions") ).map(function(o){return([o.player + " - "+o.champion  , o.damagetochampions])}).slice(0,15), 
                     //data.filter(function(item){return item.value <= slider.value}),
                     dataLabels: {
@@ -291,17 +290,7 @@ function generateGF3(){
                 }]
             });
         })
-
 }
-
-
-
-
-
-
-
-
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////
