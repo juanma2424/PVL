@@ -274,7 +274,6 @@ function generateGF3(){
                 series: [{
                     name: 'Daño Realizado',
                     data: data.filter(function(n){  return (n.champion === TempSelecP || TempSelecP == 'All')}).filter(function(n){  return (n.league === TempSelecT || TempSelecT == 'All')}).filter(function(n){  return (n.team === TempSelecE || TempSelecE == 'All')}).sort( predicateBy("damagetochampions") ).map(function(o){return([o.player + " - "+o.champion  , o.damagetochampions])}).slice(0,15), 
-                    //data.filter(function(item){return item.value <= slider.value}),
                     dataLabels: {
                         enabled: true,
                         rotation: -90,
@@ -311,7 +310,7 @@ function GenerateMap() {
             },
     
             title: {
-                text: 'Happiest countries in the world 2015'
+                text: 'LOL PLAYERS'
             },
     
             plotOptions: {
@@ -405,7 +404,7 @@ function GenerateMapScale() {
             },
     
             title: {
-                text: 'Happiest countries in the world 2015'
+                text: 'LOL PLAYERS'
             },
     
             plotOptions: {
@@ -500,6 +499,7 @@ function face() {
     }
 }
 function changeCountryFilter(){
+    var other = "All"
     var tempRegion = "All"
     if (codeCountry == "China"){
         window.alert("LPL: De este torneo han salido 2 de los campeones mundiales, Invictus Gaming y FunPlus Phoenix, logrando ser la segunda región con mas ganadres a nivel mundial.")
@@ -541,6 +541,20 @@ function changeCountryFilter(){
     outputT.innerHTML = tempRegion
     sliderT.value = tempRegion
     TempSelecT = tempRegion
+
+
+    outputP.innerHTML = other
+    sliderP.value = other
+    TempSelecP = other
+
+    outputE.innerHTML = other
+    sliderE.value = other
+    TempSelecE = other
+
+
+
+
+
     generateCharts()
 }
 
